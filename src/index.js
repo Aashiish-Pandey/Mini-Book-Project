@@ -1,11 +1,35 @@
 import React from "react";
 import ReactDom from "react-dom";
 
+import './index.css'
 
-function Greeting() {
-
-  return <h1>hello React</h1>
+function Booklist() {
+  return (
+    <section className ="booklist">
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+    </section>
+  );
 }
 
+const Book = () => {
+  return (
+    <article className ="book">
+      <Image />
+      <Title />
+      <Author />
+    </article>
+  );
+};
 
-ReactDom.render(<Greeting/>,document.getElementById('root'))
+const Image = () => (
+  <img src="https://images-eu.ssl-images-amazon.com/images/I/516yRDtSdUL._AC_UL200_SR200,200_.jpg" />
+);
+
+const Title = () => <h1>Complete Classnotes Arithmetic (Bilingual)</h1>;
+
+const Author = () => <h1>Gagan Pratap Sir</h1>;
+
+ReactDom.render(<Booklist />, document.getElementById("root"));
